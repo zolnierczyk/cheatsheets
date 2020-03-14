@@ -10,21 +10,6 @@
 % to divisbyzero.com
 % 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% How to use writeLaTeX: 
-%
-% You edit the source code here on the left, and the preview on the
-% right shows you the result within a few seconds.
-%
-% Bookmark this page and share the URL with your co-authors. They can
-% edit at the same time!
-%
-% You can upload figures, bibliographies, custom classes and
-% styles using the files menu.
-%
-% If you're new to LaTeX, the wikibook is a great place to start:
-% http://en.wikibooks.org/wiki/LaTeX
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[10pt,landscape]{article}
 \usepackage{amssymb,amsmath,amsthm,amsfonts}
@@ -105,14 +90,18 @@ Acronym from \textit{General Responsibility Assignment Software Patterns}. Main 
 \item Pure fabrication - A pure fabrication is a class that does not represent a concept in the problem domain, specially made up to achieve low coupling, high cohesion, and the reuse potential thereof derived (when a solution presented by the information expert pattern does not). This kind of class is called a "service" in domain-driven design.
 
 \end{itemize}
+
 \subsection{YAGNI}
 Acronym from  \textit{You aren't gonna need it} in another wards \textit{Always implement things when you actually need them, never when you just foresee that you need them.} or \textit{do the simplest thing that could possibly work}.
 
 \subsection{KISS}
 Acronym from \textit{Keep it simple stupid!}. Do not overthink or overengenier problem.
 
+\subsection{Make right thing easy}
+Make doing the right things easy and the wrong things hard. Peoples are not bad or good. In first place they are lazy.
+
 \section{Why patterns?}
-In software design many problems occure agin and agin. Therefore we solve those problems already many times. Design patterns are simple essance of solution for some generalized problems.
+In software design many problems occurs agin and agin. Therefore we solve those problems already many times. Design patterns are simple essence of solution for some generalized problems.
 
 \section{Clasification}
 
@@ -126,44 +115,44 @@ Main clasification of patterns is such:
 \end{itemize}
 
 \section{How to use them}
-Design patterns never occur in code as pure as they are presented in book or in catalogu. This is our responsibility to modify patterns to mach our problem best. Also patterns do not occure alone. In most cases we would like to use multiple patters at once mixed together to achive our goals best. Also remember that there are lot of different implementation for single pattern and also they differc a lot between languages and technologies.
+Design patterns never occur in code as pure as they are presented in book or in catalogue. This is our responsibility to modify patterns to mach our problem best. Also patterns do not occurs alone. In most cases we would like to use multiple patters at once mixed together to achieve our goals best. Also remember that there are lot of different implementation for single pattern and also they differ a lot between languages and technologies.
 
 \section{Creational}
 
 \subsection{Factory Method}
-Seperate creation of object from usage of objects. Factory will create object for user thanks that user don't need to known about real object type. This is fundamental method for dependency inversion / injection, low copuling, inderection and other.
-\includegraphics[page = 1, width=\linewidth]{/home/piotr/Projekty/cheatsheets/metauml/FactoryMethod2-1.pdf}
+Separate creation of object from usage of objects. Factory will create object for user thanks that user don't need to known about real object type. This is fundamental method for dependency inversion / injection, low coupling, indirection and other.
+\includegraphics[page = 1, width=\linewidth]{metauml/FactoryMethod2-1.pdf}
 \subsection{Abstract Factory Method}
-It is one level of abstraction higher than factory method. Here we have whole famili of factories to make products.
+It is one level of abstraction higher than factory method. Here we have whole family of factories to make products.
 \subsection{Builder}
 It is like one level of abstraction higher than factories. Separate the construction of a complex object from its representation, allowing the same construction process to create various representations. 
-\includegraphics[page = 1, width=\linewidth]{/home/piotr/Projekty/cheatsheets/metauml/Builder2-1.pdf}
+\includegraphics[page = 1, width=\linewidth]{metauml/Builder2-1.pdf}
 \subsection{Prototype}
-Instead of creating object every time here we are clonning it from \textit{prototype}. Thanks that we can for example during lifetime of program creates multiple predefined prototypes to produce it in many copies.
-\includegraphics[page = 1, width=\linewidth]{/home/piotr/Projekty/cheatsheets/metauml/Prototype-1.pdf}
+Instead of creating object every time here we are cloning it from \textit{prototype}. Thanks that we can for example during lifetime of program creates multiple predefined prototypes to produce it in many copies.
+\includegraphics[page = 1, width=\linewidth]{metauml/Prototype-1.pdf}
 \subsection{Singleton}
-Consideret as anti-pattern. Allow only for one instance of class. We can generalize this pattern into Multition which is simple map of named objects one per name.
-\includegraphics[page = 1, width=\linewidth]{/home/piotr/Projekty/cheatsheets/metauml/Singleton-1.pdf}
+Considered as anti-pattern. Allow only for one instance of class. We can generalize this pattern into Multition which is simple map of named objects one per name.
+\includegraphics[page = 1, width=\linewidth]{metauml/Singleton-1.pdf}
 
 \section{Structural}
 
 \subsection{Adapter}
-Simple man in the middle which try to translate stuff between incompatybile systems.
-\includegraphics[page = 1, width=\linewidth]{/home/piotr/Projekty/cheatsheets/metauml/Adapter1-1.pdf}
+Simple man in the middle which try to translate stuff between incompatible systems.
+\includegraphics[page = 1, width=\linewidth]{metauml/Adapter1-1.pdf}
 \subsection{Bridge}
-Decouple an abstraction from its implementation allowing the two to vary independently. In othere word abstract objects (in this mening high level logic) instead of inheritance and polymorhipsm for delegation of work into derived classes contains/compose implementation objects.
-\includegraphics[page = 1, width=\linewidth]{/home/piotr/Projekty/cheatsheets/metauml/Bridge1-1.pdf}
+Decouple an abstraction from its implementation allowing the two to vary independently. In other word abstract objects (in this meaning high level logic) instead of inheritance and polymorphism for delegation of work into derived classes contains/compose implementation objects.
+\includegraphics[page = 1, width=\linewidth]{metauml/Bridge1-1.pdf}
 \subsection{Composite}
 Composite is a structural design pattern that lets you compose objects into tree structures and then work with these structures as if they were individual objects.
-\includegraphics[page = 1, width=\linewidth]{/home/piotr/Projekty/cheatsheets/metauml/Composite-1.pdf}
+\includegraphics[page = 1, width=\linewidth]{metauml/Composite-1.pdf}
 \subsection{Decorator}
 Decorator is a structural design pattern that lets you attach new behaviors to objects by placing these objects inside special wrapper objects that contain the behaviors.
-\includegraphics[page = 1, width=\linewidth]{/home/piotr/Projekty/cheatsheets/metauml/Decorator-1.pdf}
+\includegraphics[page = 1, width=\linewidth]{metauml/Decorator-1.pdf}
 \subsection{Facade}
 Facade is a structural design pattern that provides a simplified interface to a library, a framework, or any other complex set of classes.
 \subsection{Flyweight}
 Flyweight is a structural design pattern that lets you fit more objects into the available amount of RAM by sharing common parts of state between multiple objects instead of keeping all of the data in each object.
-\includegraphics[page = 1, width=\linewidth]{/home/piotr/Projekty/cheatsheets/metauml/Flyweight1-1.pdf}
+\includegraphics[page = 1, width=\linewidth]{metauml/Flyweight1-1.pdf}
 
 \subsection{Proxy}
 Proxy is a structural design pattern that lets you provide a substitute or placeholder for another object. A proxy controls access to the original object, allowing you to perform something either before or after the request gets through to the original object.
@@ -171,43 +160,43 @@ Proxy is a structural design pattern that lets you provide a substitute or place
 \item Virtual proxy - like lazy initialization
 \item Protection proxy
 \item Remote proxy
-\item Logign proxy
+\item Logging proxy
 \item Caching proxy
 \item Smart proxy - like smart pointer
 \end{itemize}
-\includegraphics[page = 1, width=\linewidth]{/home/piotr/Projekty/cheatsheets/metauml/Decorator-1.pdf}
+\includegraphics[page = 1, width=\linewidth]{metauml/Decorator-1.pdf}
 \section{Behavioral}
 
 \subsection{Chain of Responsibility}
 Chain of Responsibility is a behavioral design pattern that lets you pass requests along a chain of handlers. Upon receiving a request, each handler decides either to process the request or to pass it to the next handler in the chain.
-\includegraphics[page = 1, width=\linewidth]{/home/piotr/Projekty/cheatsheets/metauml/Chain1-1.pdf}
+\includegraphics[page = 1, width=\linewidth]{metauml/Chain1-1.pdf}
 \subsection{Command}
 Command is a behavioral design pattern that turns a request into a stand-alone object that contains all information about the request. This transformation lets you parameterize methods with different requests, delay or queue a request’s execution, and support undoable operations.
-\includegraphics[page = 1, width=\linewidth]{/home/piotr/Projekty/cheatsheets/metauml/Command1-1.pdf}
+\includegraphics[page = 1, width=\linewidth]{metauml/Command1-1.pdf}
 \subsection{Iterator}
 Iterator is a behavioral design pattern that lets you traverse elements of a collection without exposing its underlying representation (list, stack, tree, etc.).
-\includegraphics[page = 1, width=\linewidth]{/home/piotr/Projekty/cheatsheets/metauml/Iterator1-1.pdf}
+\includegraphics[page = 1, width=\linewidth]{metauml/Iterator1-1.pdf}
 \subsection{Mediator}
 Mediator is a behavioral design pattern that lets you reduce chaotic dependencies between objects. The pattern restricts direct communications between the objects and forces them to collaborate only via a mediator object.
-\includegraphics[page = 1, width=\linewidth]{/home/piotr/Projekty/cheatsheets/metauml/Mediator1-1.pdf}
+\includegraphics[page = 1, width=\linewidth]{metauml/Mediator1-1.pdf}
 \subsection{Memento}
 Memento is a behavioral design pattern that lets you save and restore the previous state of an object without revealing the details of its implementation.
-\includegraphics[page = 1, width=\linewidth]{/home/piotr/Projekty/cheatsheets/metauml/Memento-1.pdf}
+\includegraphics[page = 1, width=\linewidth]{metauml/Memento-1.pdf}
 \subsection{Observer}
 Observer is a behavioral design pattern that lets you define a subscription mechanism to notify multiple objects about any events that happen to the object they’re observing.
-\includegraphics[page = 1, width=\linewidth]{/home/piotr/Projekty/cheatsheets/metauml/Observer-1.pdf}
+\includegraphics[page = 1, width=\linewidth]{metauml/Observer-1.pdf}
 \subsection{State}
 State is a behavioral design pattern that lets an object alter its behavior when its internal state changes. It appears as if the object changed its class.
-\includegraphics[page = 1, width=\linewidth]{/home/piotr/Projekty/cheatsheets/metauml/State1-1.pdf}
+\includegraphics[page = 1, width=\linewidth]{metauml/State1-1.pdf}
 \subsection{Strategy}
 Strategy is a behavioral design pattern that lets you define a family of algorithms, put each of them into a separate class, and make their objects interchangeable.
-\includegraphics[page = 1, width=\linewidth]{/home/piotr/Projekty/cheatsheets/metauml/Strategy1-1.pdf}
+\includegraphics[page = 1, width=\linewidth]{metauml/Strategy1-1.pdf}
 \subsection{Template Method}
 Template Method is a behavioral design pattern that defines the skeleton of an algorithm in the superclass but lets subclasses override specific steps of the algorithm without changing its structure.
-\includegraphics[page = 1, width=\linewidth]{/home/piotr/Projekty/cheatsheets/metauml/TemplateMethod1-1.pdf}
+\includegraphics[page = 1, width=\linewidth]{metauml/TemplateMethod1-1.pdf}
 \subsection{Visitor}
 Visitor is a behavioral design pattern that lets you separate algorithms from the objects on which they operate.
-\includegraphics[page = 1, width=\linewidth]{/home/piotr/Projekty/cheatsheets/metauml/Visitor1-1.pdf}
+\includegraphics[page = 1, width=\linewidth]{metauml/Visitor1-1.pdf}
 
 \section{Concurrency}
 
