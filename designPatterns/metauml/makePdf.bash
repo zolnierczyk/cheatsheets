@@ -9,5 +9,6 @@ do
 done
 
 rm *.log
-rm *.ps
 rm *.1
+rm *.ps
+
