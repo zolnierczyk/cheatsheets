@@ -122,37 +122,46 @@ Design patterns never occur in code as pure as they are presented in book or in 
 \subsection{Factory Method}
 Separate creation of object from usage of objects. Factory will create object for user thanks that user don't need to known about real object type. This is fundamental method for dependency inversion / injection, low coupling, indirection and other.
 \includegraphics[page = 1, width=\linewidth]{metauml/FactoryMethod2-1.pdf}
+
 \subsection{Abstract Factory Method}
 It is one level of abstraction higher than factory method. Here we have whole family of factories to make products.
+
 \subsection{Builder}
 It is like one level of abstraction higher than factories. Separate the construction of a complex object from its representation, allowing the same construction process to create various representations. 
 \includegraphics[page = 1, width=\linewidth]{metauml/Builder2-1.pdf}
+
 \subsection{Prototype}
 Instead of creating object every time here we are cloning it from \textit{prototype}. Thanks that we can for example during lifetime of program creates multiple predefined prototypes to produce it in many copies.
 \includegraphics[page = 1, width=\linewidth]{metauml/Prototype-1.pdf}
+
 \subsection{Singleton}
 Considered as anti-pattern. Allow only for one instance of class. We can generalize this pattern into Multition which is simple map of named objects one per name.
-\includegraphics[page = 1, width=\linewidth]{metauml/Singleton-1.pdf}
+\includegraphics[page = 1, width=0.75\linewidth]{metauml/Singleton-1.pdf}
 
 \section{Structural}
 
 \subsection{Adapter}
 Simple man in the middle which try to translate stuff between incompatible systems.
 \includegraphics[page = 1, width=\linewidth]{metauml/Adapter1-1.pdf}
+
 \subsection{Bridge}
 Decouple an abstraction from its implementation allowing the two to vary independently. In other word abstract objects (in this meaning high level logic) instead of inheritance and polymorphism for delegation of work into derived classes contains/compose implementation objects.
 \includegraphics[page = 1, width=\linewidth]{metauml/Bridge1-1.pdf}
+
 \subsection{Composite}
 Composite is a structural design pattern that lets you compose objects into tree structures and then work with these structures as if they were individual objects.
 \includegraphics[page = 1, width=\linewidth]{metauml/Composite-1.pdf}
+
 \subsection{Decorator}
 Decorator is a structural design pattern that lets you attach new behaviors to objects by placing these objects inside special wrapper objects that contain the behaviors.
 \includegraphics[page = 1, width=\linewidth]{metauml/Decorator-1.pdf}
+
 \subsection{Facade}
 Facade is a structural design pattern that provides a simplified interface to a library, a framework, or any other complex set of classes.
+
 \subsection{Flyweight}
 Flyweight is a structural design pattern that lets you fit more objects into the available amount of RAM by sharing common parts of state between multiple objects instead of keeping all of the data in each object.
-\includegraphics[page = 1, width=\linewidth]{metauml/Flyweight1-1.pdf}
+\includegraphics[page = 1, width=0.65\linewidth]{metauml/Flyweight1-1.pdf}
 
 \subsection{Proxy}
 Proxy is a structural design pattern that lets you provide a substitute or placeholder for another object. A proxy controls access to the original object, allowing you to perform something either before or after the request gets through to the original object.
@@ -165,35 +174,45 @@ Proxy is a structural design pattern that lets you provide a substitute or place
 \item Smart proxy - like smart pointer
 \end{itemize}
 \includegraphics[page = 1, width=\linewidth]{metauml/Decorator-1.pdf}
+
 \section{Behavioral}
 
 \subsection{Chain of Responsibility}
 Chain of Responsibility is a behavioral design pattern that lets you pass requests along a chain of handlers. Upon receiving a request, each handler decides either to process the request or to pass it to the next handler in the chain.
 \includegraphics[page = 1, width=\linewidth]{metauml/Chain1-1.pdf}
+
 \subsection{Command}
 Command is a behavioral design pattern that turns a request into a stand-alone object that contains all information about the request. This transformation lets you parameterize methods with different requests, delay or queue a request’s execution, and support undoable operations.
 \includegraphics[page = 1, width=\linewidth]{metauml/Command1-1.pdf}
+
 \subsection{Iterator}
 Iterator is a behavioral design pattern that lets you traverse elements of a collection without exposing its underlying representation (list, stack, tree, etc.).
-\includegraphics[page = 1, width=\linewidth]{metauml/Iterator1-1.pdf}
+\includegraphics[page = 1, width=0.65\linewidth]{metauml/Iterator1-1.pdf}
+
 \subsection{Mediator}
 Mediator is a behavioral design pattern that lets you reduce chaotic dependencies between objects. The pattern restricts direct communications between the objects and forces them to collaborate only via a mediator object.
 \includegraphics[page = 1, width=\linewidth]{metauml/Mediator1-1.pdf}
+
 \subsection{Memento}
 Memento is a behavioral design pattern that lets you save and restore the previous state of an object without revealing the details of its implementation.
 \includegraphics[page = 1, width=\linewidth]{metauml/Memento-1.pdf}
+
 \subsection{Observer}
 Observer is a behavioral design pattern that lets you define a subscription mechanism to notify multiple objects about any events that happen to the object they’re observing.
 \includegraphics[page = 1, width=\linewidth]{metauml/Observer-1.pdf}
+
 \subsection{State}
 State is a behavioral design pattern that lets an object alter its behavior when its internal state changes. It appears as if the object changed its class.
 \includegraphics[page = 1, width=\linewidth]{metauml/State1-1.pdf}
+
 \subsection{Strategy}
 Strategy is a behavioral design pattern that lets you define a family of algorithms, put each of them into a separate class, and make their objects interchangeable.
 \includegraphics[page = 1, width=\linewidth]{metauml/Strategy1-1.pdf}
+
 \subsection{Template Method}
 Template Method is a behavioral design pattern that defines the skeleton of an algorithm in the superclass but lets subclasses override specific steps of the algorithm without changing its structure.
-\includegraphics[page = 1, width=\linewidth]{metauml/TemplateMethod1-1.pdf}
+\includegraphics[page = 1, width=0.85\linewidth]{metauml/TemplateMethod1-1.pdf}
+
 \subsection{Visitor}
 Visitor is a behavioral design pattern that lets you separate algorithms from the objects on which they operate.
 \includegraphics[page = 1, width=\linewidth]{metauml/Visitor1-1.pdf}
@@ -202,38 +221,54 @@ Visitor is a behavioral design pattern that lets you separate algorithms from th
 
 \subsection{Active Object}
  Decouples method execution from method invocation that reside in their own thread of control. The goal is to introduce concurrency, by using asynchronous method invocation and a scheduler for handling requests. 
-\subsection{Balking}
+
+ \subsection{Balking}
 Only execute an action on an object when the object is in a particular state. 
+
 \subsection{Binding properties}
- 	Combining multiple observers to force properties in different objects to be synchronized or coordinated in some way.
+Combining multiple observers to force properties in different objects to be synchronized or coordinated in some way.
+
 \subsection{Compute}
 The same calculation many times in parallel, differing by integer parameters used with non-branching pointer math into shared arrays, such as GPU-optimized Matrix multiplication or Convolutional neural network. 
+
 \subsection{Double-checked locking}
 Reduce the overhead of acquiring a lock by first testing the locking criterion (the 'lock hint') in an unsafe manner; only if that succeeds does the actual locking logic proceed. 
+
 \subsection{Event-based asynchronous}	
 Addresses problems with the asynchronous pattern that occur in multithreaded programs.
+
 \subsection{Guarded suspension}
 Manages operations that require both a lock to be acquired and a precondition to be satisfied before the operation can be executed. 
+
 \subsection{Join}
- 	Join-pattern provides a way to write concurrent, parallel and distributed programs by message passing. Compared to the use of threads and locks, this is a high-level programming model. 
+Join-pattern provides a way to write concurrent, parallel and distributed programs by message passing. Compared to the use of threads and locks, this is a high-level programming model. 
+
 \subsection{Lock}
 One thread puts a "lock" on a resource, preventing other threads from accessing or modifying it.
+
 \subsection{Messaging design pattern (MDP)}
 Allows the interchange of information (i.e. messages) between components and applications. 	
+
 \subsection{Monitor}
- 	An object whose methods are subject to mutual exclusion, thus preventing multiple objects from erroneously trying to use it at the same time. 
+An object whose methods are subject to mutual exclusion, thus preventing multiple objects from erroneously trying to use it at the same time. 
+
 \subsection{Proactor}
 Proactor is a software design pattern for event handling in which long running activities are running in an asynchronous part. A completion handler is called after the asynchronous part has terminated. The proactor pattern can be considered to be an asynchronous variant of the synchronous reactor pattern.[1] 
+
 \subsection{Reactor}
 A reactor object provides an asynchronous interface to resources that must be handled synchronously. 
+
 \subsection{Read-write lock}
 Allows concurrent read access to an object, but requires exclusive access for write operations. 
+
 \subsection{Scheduler}
- 	Explicitly control when threads may execute single-threaded code. 
+Explicitly control when threads may execute single-threaded code. 
+
 \subsection{Thread pool}
 A number of threads are created to perform a number of tasks, which are usually organized in a queue. Typically, there are many more tasks than threads. Can be considered a special case of the object pool pattern. 
 
 \section{Sources}
+
 \begin{itemize}
 \item https://refactoring.guru/
 \item https://github.com/ogheorghies/MetaUML
