@@ -83,7 +83,7 @@ acs-*.bib
 
 # feynmf/feynmp
 *.mf
-*.mp
+# *.mp # In this files we have diagrams written
 *.t[1-9]
 *.t[1-9][0-9]
 *.tfm
