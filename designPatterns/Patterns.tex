@@ -215,57 +215,65 @@ Template Method is a behavioral design pattern that defines the skeleton of an a
 
 \subsection{Visitor}
 Visitor is a behavioral design pattern that lets you separate algorithms from the objects on which they operate.
-\includegraphics[page = 1, width=\linewidth]{metauml/Visitor1-1.pdf}
+\includegraphics[page = 1, width=\linewidth]{metauml/Visitor4-1.pdf}
 
 \section{Concurrency}
-
-\subsection{Active Object}
- Decouples method execution from method invocation that reside in their own thread of control. The goal is to introduce concurrency, by using asynchronous method invocation and a scheduler for handling requests. 
-
- \subsection{Balking}
-Only execute an action on an object when the object is in a particular state. 
-
-\subsection{Binding properties}
-Combining multiple observers to force properties in different objects to be synchronized or coordinated in some way.
-
-\subsection{Compute}
-The same calculation many times in parallel, differing by integer parameters used with non-branching pointer math into shared arrays, such as GPU-optimized Matrix multiplication or Convolutional neural network. 
-
-\subsection{Double-checked locking}
-Reduce the overhead of acquiring a lock by first testing the locking criterion (the 'lock hint') in an unsafe manner; only if that succeeds does the actual locking logic proceed. 
-
-\subsection{Event-based asynchronous}	
-Addresses problems with the asynchronous pattern that occur in multithreaded programs.
-
-\subsection{Guarded suspension}
-Manages operations that require both a lock to be acquired and a precondition to be satisfied before the operation can be executed. 
-
-\subsection{Join}
-Join-pattern provides a way to write concurrent, parallel and distributed programs by message passing. Compared to the use of threads and locks, this is a high-level programming model. 
+Concurrency patterns are more problematic than patterns mentioned before. Multithreading model can be very different between languages or in same case not even exists. There fore list below is rather set of ideas than can be found in many places. Please be aware that implementation of some patter from list below in language not prepared for it can result with bugs, strange behaviors and is simple wrong.
 
 \subsection{Lock}
-One thread puts a "lock" on a resource, preventing other threads from accessing or modifying it.
+Rather low level concept that there is a lock which must be acquired before accessing shared resources. Thanks this lock only one thread can access shared resource in time. It is building block for high level patterns. 
 
-\subsection{Messaging design pattern (MDP)}
-Allows the interchange of information (i.e. messages) between components and applications. 	
+\subsection{Thread-specific storage}
+Rather low level concept that there is memory than can be accessed only by thread itself. Every thread have its own memory so there is no need to synchronize it with any one.
 
-\subsection{Monitor}
-An object whose methods are subject to mutual exclusion, thus preventing multiple objects from erroneously trying to use it at the same time. 
+\subsection{Scheduler}
+Very very wide concept in multithreading programming. Scheduler is instance which decide which function/thread should be run next. There are multiple strategies for that FIFO, round-robin and other. Scheduler can decide about invocation of functions on single thread or multiple functions on multiple threads.  
 
-\subsection{Proactor}
-Proactor is a software design pattern for event handling in which long running activities are running in an asynchronous part. A completion handler is called after the asynchronous part has terminated. The proactor pattern can be considered to be an asynchronous variant of the synchronous reactor pattern.[1] 
+\subsection{Balking}
+Only execute an action on an object when the object is in a particular state in any other case return with no result. This behavior prevent invoking code when object is in invalid state. In many cases we can see balking inside loop which is not good solution and can be considered as anit-pattern. When you decide to use balking in your concurrent code think twice because it can later brings you big problems. 
+
+\subsection{Guarded suspension}
+Manages operations that require both a lock to be acquired and a precondition to be satisfied before the operation can be executed. In other words when object from which you want to get result use Balking and you need to get this result before next operation you write loop inside which you check if result is ready. Inside this loop you need to add sleep or wait for signal (which signal result ready state) method which prevent spinning this loop with high frequency.   
+
+\subsection{Double-checked locking}
+It is like lazy initialization. In first place we test without locking and if as result of test we need to change shared resource we perform lock and make test second time. This pattern can improve speed (but only for systems where locking is expensive) thanks much less lock acquisition but only in scenarios when changes to shared resources are rare. 
+
+\subsection{Read-write lock}
+Allows concurrent read access to an object, but requires exclusive access for write operations. For some languages you can define types of locks.
 
 \subsection{Reactor}
 A reactor object provides an asynchronous interface to resources that must be handled synchronously. 
 
-\subsection{Read-write lock}
-Allows concurrent read access to an object, but requires exclusive access for write operations. 
+\subsection{Proactor}
+Proactor is a software design pattern for event handling in which long running activities are running in an asynchronous part. A completion handler is called after the asynchronous part has terminated. The proactor pattern can be considered to be an asynchronous variant of the synchronous reactor pattern.[1] 
 
-\subsection{Scheduler}
-Explicitly control when threads may execute single-threaded code. 
+\subsection{Monitor}
+An object whose methods are subject to mutual exclusion, thus preventing multiple objects from erroneously trying to use it at the same time. 
+
+\subsection{Active Object}
+ Decouples method execution from method invocation that reside in their own thread of control. The goal is to introduce concurrency, by using asynchronous method invocation and a scheduler for handling requests. 
+
+\subsection{Binding properties}
+Frequently used in GUI frameworks for separation between view and controller (or model). We are defining properties which are shared (binded) and synchronized between each object which is using it. Thanks this kind of abstraction we can achieve decopulation and hide synchronization inside properties.
+
+\subsection{Producer Consumers}
+This pattern decouple data producers from data consumers. Thanks that in the middle we can put queue or buffer for data to separate this both groups and let them work with different speed.
 
 \subsection{Thread pool}
 A number of threads are created to perform a number of tasks, which are usually organized in a queue. Typically, there are many more tasks than threads. Can be considered a special case of the object pool pattern. 
+
+\subsection{Compute kernel}
+The same calculation many times in parallel, differing by integer parameters used with non-branching pointer math into shared arrays, such as GPU-optimized Matrix multiplication or convolution neural network. 
+
+\subsection{Event-based asynchronous}	
+It is name for high level concept for defining program flow on events not loops. Instead of looping to invoke code we wait for event to happen and the invoking code. Example implementation is Active Object pattern or futures (C++ or java and other languages features).
+
+\subsection{Messaging design pattern (MDP)}
+Allows the interchange of information (i.e. messages) between components and applications. It is very wide pattern or rather set of multiple possible solution like request-response, publish-subscribe, push-pull. All that names can be similar from other patterns but most important property of this solutions are that all communication is done by message passing.
+
+\subsection{Join}
+Join-pattern provides a way to write concurrent, parallel and distributed programs by message passing. Compared to the use of threads and locks, this is a high-level programming model. It is like super pipeline processing. In general we define join as set of condition on channels which must be satisfied before join is triggered. When is triggered then we acquired lock if needed, run code and output result to channel which can be connected to other joins. Because joins are independent, connected only by channels can be reordered and changed during runtime even.
+
 
 \section{Sources}
 
